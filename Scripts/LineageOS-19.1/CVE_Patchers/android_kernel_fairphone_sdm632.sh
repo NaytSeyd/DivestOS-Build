@@ -1,5 +1,8 @@
 #!/bin/bash
 cd "$DOS_BUILD_BASE""kernel/fairphone/sdm632"
+git apply $DOS_PATCHES_LINUX_CVES/0001-LinuxIncrementals/4.9/4.9.0332-0333.patch --exclude=Makefile
+git apply $DOS_PATCHES_LINUX_CVES/0001-LinuxIncrementals/4.9/4.9.0333-0334.patch --exclude=Makefile
+git apply $DOS_PATCHES_LINUX_CVES/0001-LinuxIncrementals/4.9/4.9.0334-0335.patch --exclude=Makefile
 git apply $DOS_PATCHES_LINUX_CVES/0005-Graphene-Deny_USB/4.9/0002.patch
 git apply $DOS_PATCHES_LINUX_CVES/0008-Graphene-Kernel_Hardening/4.9/0025.patch
 git apply $DOS_PATCHES_LINUX_CVES/0008-Graphene-Kernel_Hardening/4.9/0026.patch
@@ -66,19 +69,24 @@ git apply $DOS_PATCHES_LINUX_CVES/CVE-2021-Misc2/ANY/0012.patch
 git apply $DOS_PATCHES_LINUX_CVES/CVE-2022-1679/^5.19/0001.patch
 git apply $DOS_PATCHES_LINUX_CVES/CVE-2022-2153/^5.17/0001.patch
 git apply $DOS_PATCHES_LINUX_CVES/CVE-2022-2153/^5.17/0002.patch
+git apply $DOS_PATCHES_LINUX_CVES/CVE-2022-2978/4.9/0004.patch
 git apply $DOS_PATCHES_LINUX_CVES/CVE-2022-3061/^5.18/0001.patch
-git apply $DOS_PATCHES_LINUX_CVES/CVE-2022-3521/^6.0/0001.patch
+git apply $DOS_PATCHES_LINUX_CVES/CVE-2022-3424/^6.1/0001.patch
 git apply $DOS_PATCHES_LINUX_CVES/CVE-2022-3542/3.8-^6.0/0001.patch
 git apply $DOS_PATCHES_LINUX_CVES/CVE-2022-3565/4.9/0004.patch
 git apply $DOS_PATCHES_LINUX_CVES/CVE-2022-3594/4.9/0004.patch
 git apply $DOS_PATCHES_LINUX_CVES/CVE-2022-3621/4.9/0004.patch
+git apply $DOS_PATCHES_LINUX_CVES/CVE-2022-3643/4.9/0006.patch
 git apply $DOS_PATCHES_LINUX_CVES/CVE-2022-3646/4.9/0004.patch
 git apply $DOS_PATCHES_LINUX_CVES/CVE-2022-3649/4.9/0004.patch
 git apply $DOS_PATCHES_LINUX_CVES/CVE-2022-20148/^5.15/0002.patch
 git apply $DOS_PATCHES_LINUX_CVES/CVE-2022-20371/ANY/0001.patch
 git apply $DOS_PATCHES_LINUX_CVES/CVE-2022-27950/^5.16/0001.patch
+git apply $DOS_PATCHES_LINUX_CVES/CVE-2022-36280/^6.1/0001.patch
 git apply $DOS_PATCHES_LINUX_CVES/CVE-2022-40768/4.9/0007.patch
-git apply $DOS_PATCHES_LINUX_CVES/CVE-2022-42895/4.9/0004.patch
+git apply $DOS_PATCHES_LINUX_CVES/CVE-2022-41849/4.9/0004.patch
+git apply $DOS_PATCHES_LINUX_CVES/CVE-2022-41850/4.9/0004.patch
 git apply $DOS_PATCHES_LINUX_CVES/CVE-2022-43750/4.9/0004.patch
-editKernelLocalversion "-dos.p80"
+git apply $DOS_PATCHES_LINUX_CVES/CVE-2022-45934/^6.1/0001.patch
+editKernelLocalversion "-dos.p88"
 cd "$DOS_BUILD_BASE"
