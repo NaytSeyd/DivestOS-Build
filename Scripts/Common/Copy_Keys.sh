@@ -20,6 +20,7 @@ source "$DOS_SCRIPTS_COMMON/Shell.sh";
 
 if [ -d "$DOS_SIGNING_KEYS" ]; then
 echo "Copying verity/avb public keys to kernels...";
+cat "$DOS_SIGNING_KEYS/davinci/verity.x509.pem" >> "kernel/xiaomi/sm6150/certs/verity.x509.pem";
 cat "$DOS_SIGNING_KEYS/akari/verity.x509.pem" >> "kernel/sony/sdm845/certs/verity.x509.pem";
 cat "$DOS_SIGNING_KEYS/alioth/verity.x509.pem" >> "kernel/xiaomi/sm8250/certs/verity.x509.pem";
 cat "$DOS_SIGNING_KEYS/Amber/verity.x509.pem" >> "kernel/yandex/sdm660/certs/verity.x509.pem";
@@ -84,6 +85,7 @@ cat "$DOS_SIGNING_KEYS/xz2c/verity.x509.pem" >> "kernel/sony/sdm845/certs/verity
 cat "$DOS_SIGNING_KEYS/z2_plus/verity.x509.pem" >> "kernel/zuk/msm8996/certs/verity.x509.pem";
 cat "$DOS_SIGNING_KEYS/zenfone3/verity.x509.pem" >> "kernel/asus/msm8953/certs/verity.x509.pem";
 
+cp -v "$DOS_SIGNING_KEYS/davinci/verifiedboot_relkeys.der.x509" "kernel/xiaomi/sm6150/verifiedboot_davinci_dos_relkeys.der.x509";
 cp -v "$DOS_SIGNING_KEYS/akari/verifiedboot_relkeys.der.x509" "kernel/sony/sdm845/verifiedboot_akari_dos_relkeys.der.x509";
 cp -v "$DOS_SIGNING_KEYS/alioth/verifiedboot_relkeys.der.x509" "kernel/xiaomi/sm8250/verifiedboot_alioth_dos_relkeys.der.x509";
 cp -v "$DOS_SIGNING_KEYS/Amber/verifiedboot_relkeys.der.x509" "kernel/yandex/sdm660/verifiedboot_Amber_dos_relkeys.der.x509";
